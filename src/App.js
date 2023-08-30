@@ -1,6 +1,7 @@
 
+
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CollegeList from './CollegeList';
 import CollegeDetails from './CollegeDetails';
 import AddStudent from './AddStudent';
@@ -8,11 +9,11 @@ import AddStudent from './AddStudent';
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={CollegeList} />
-        <Route exact path="/college/:collegeId" component={CollegeDetails} />
-        <Route exact path="/college/:collegeId/add-student" component={AddStudent} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<CollegeList />} />
+        <Route path="/college/:collegeId" element={<CollegeDetails />} />
+        <Route path="/college/:collegeId/add-student" element={<AddStudent />} />
+      </Routes>
     </Router>
   );
 }
